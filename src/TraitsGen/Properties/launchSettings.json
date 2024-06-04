@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Gernerator": {
+      "commandName": "DebugRoslynComponent",
+      "targetProject": "..\\..\\tests\\TraitsGen.Tests\\TraitsGen.Tests.csproj"
+    }
+  }
+}
