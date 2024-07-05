@@ -57,9 +57,9 @@ namespace CSharp.UtilityTypes
         {
             List<ClassInfo> others = new();
 
-            Dictionary<string, string> properties = new();
             foreach (var ourClass in list)
             {
+                Dictionary<string, string> properties = new();
                 string className = ourClass.Identifier.ValueText;
                 INamedTypeSymbol symbol = compilation.GetClassSymbol(ourClass)!;
                 var attributes = ourClass.AttributeLists.SelectMany(x => x.Attributes).Where(x => x.Name is GenericNameSyntax gns && mixinAttributes.Contains(gns.Identifier.ValueText));
