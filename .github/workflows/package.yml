@@ -41,7 +41,7 @@ jobs:
       - name: Package Nightly Nuget 📦
         run: |
           SUFFIX=`date "+%y%m%d%H%M%S"`
-          dotnet build
+          dotnet build -c Release
           dotnet pack src/CSharp.UtilityTypes/CSharp.UtilityTypes.csproj /p:PackageVersion=$Version-nightly-${SUFFIX} -c Release -o publish
 
       - name: Publish to Nuget ✔
