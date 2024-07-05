@@ -1,6 +1,5 @@
-using System.Runtime.InteropServices;
 
-namespace TraitsGen.Tests
+namespace CSharp.UtilityTypes.Tests
 {
     public class UnitTest1
     {
@@ -12,8 +11,13 @@ namespace TraitsGen.Tests
             //ab.SampleAValue = "2";
             ab.SampleBNumber = 1;
             ab.SampleBValue = 2;
-            ab.A = "A";
-            ab.B = "B";
+            ab.A = true;
+            //ab.B = "B";
+
+            var a = new SampleARemoveValue
+            {
+                SampleAValue = "1",
+            };
         }
     }
 
@@ -21,17 +25,24 @@ namespace TraitsGen.Tests
     [Mixin<SampleA>]
     [Mixin<SampleB>]
     [Omit<SampleA>("SampleAName")]
-    [Pick<SampleA>("A", "B")]
+    [Pick<SampleA>("A")]
     public partial class AB
     {
 
     }
+
+    [Pick<SampleA>("SampleAValue")]
+    public partial class SampleARemoveValue { }
 
     public partial class SampleA
     {
         public string SampleAName { get; set; }
 
         public string SampleAValue { get; set; }
+
+        public bool A { get; set; }
+
+        public bool B { get; set; }
     }
 
     public class SampleB
@@ -39,5 +50,4 @@ namespace TraitsGen.Tests
         public int SampleBNumber { get; set; }
         public int SampleBValue { get; set; }
     }
-
 }

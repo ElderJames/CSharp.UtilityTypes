@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Gernerator": {
+      "commandName": "DebugRoslynComponent",
+      "targetProject": "..\\..\\tests\\CSharp.UtilityTypes.Tests\\CSharp.UtilityTypes.Tests.csproj"
+    }
+  }
+}

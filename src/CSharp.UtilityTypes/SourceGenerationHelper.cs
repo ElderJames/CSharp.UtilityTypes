@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TraitsGen;
+namespace CSharp.UtilityTypes;
 
 public static class SourceGenerationHelper
 {
     public const string MixinAttribute = @"
-namespace TraitsGen
+namespace CSharp.UtilityTypes
 {
     [System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple = true)]
     public class MixinAttribute<T> : System.Attribute
@@ -16,7 +16,7 @@ namespace TraitsGen
 }";
 
     public const string PickAttribute = @"
-namespace TraitsGen
+namespace CSharp.UtilityTypes
 {
     [System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple = true)]
     public class PickAttribute<T> : System.Attribute
@@ -29,7 +29,7 @@ namespace TraitsGen
 }";
 
     public const string OmitAttribute = @"
-namespace TraitsGen
+namespace CSharp.UtilityTypes
 {
     [System.AttributeUsage(System.AttributeTargets.Class, AllowMultiple = true)]
     public class OmitAttribute<T> : System.Attribute
