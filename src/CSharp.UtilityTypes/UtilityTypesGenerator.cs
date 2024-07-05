@@ -116,18 +116,16 @@ namespace CSharp.UtilityTypes
                 foreach (var member in members)
                 {
                     var definition = member.OriginalDefinition;
-                    if (namedArgument.Values.Any(x => x.Value.ToString() != definition.Name))
+                    if (namedArgument.Values.Any(x => x.Value.ToString() == definition.Name))
                     {
-                        continue;
-                    }
-
-                    if (properties.ContainsKey(definition.Name))
-                    {
-                        properties[definition.Name] = "object";
-                    }
-                    else
-                    {
-                        properties.Add(definition.Name, definition.Type.Name);
+                        if (properties.ContainsKey(definition.Name) && properties[definition.Name] != definition.Type.Name)
+                        {
+                            properties[definition.Name] = "object";
+                        }
+                        else
+                        {
+                            properties.Add(definition.Name, definition.Type.Name);
+                        }
                     }
                 }
             }
@@ -145,7 +143,7 @@ namespace CSharp.UtilityTypes
                 foreach (var member in members)
                 {
                     var definition = member.OriginalDefinition;
-                    if (properties.ContainsKey(definition.Name))
+                    if (properties.ContainsKey(definition.Name) && properties[definition.Name] != definition.Type.Name)
                     {
                         properties[definition.Name] = "object";
                     }

@@ -50,4 +50,16 @@ namespace CSharp.UtilityTypes.Tests
         public int SampleBNumber { get; set; }
         public int SampleBValue { get; set; }
     }
+
+    public class Todo
+    {
+        public string Title { get; set; }
+
+        public string Description { get; set; }
+
+        public bool Completed { get; set; }
+    }
+
+    [Pick<Todo>("Title", "Completed")]
+    public partial class TodoPreview { }
 }
