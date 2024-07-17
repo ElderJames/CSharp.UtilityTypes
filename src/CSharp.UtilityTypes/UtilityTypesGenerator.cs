@@ -143,7 +143,7 @@ namespace CSharp.UtilityTypes
                 foreach (var member in members)
                 {
                     var definition = member.OriginalDefinition;
-                    if (properties.ContainsKey(definition.Name) && properties[definition.Name] != definition.Type.Name)
+                    if (properties.ContainsKey(definition.Name) /*&& properties[definition.Name] != definition.Type.Name*/)
                     {
                         properties[definition.Name] = "object";
                     }
